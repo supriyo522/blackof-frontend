@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "set NEXT_DISABLE_LIGHTNINGCSS=true && next build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
