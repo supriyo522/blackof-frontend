@@ -1,0 +1,115 @@
+.evolution-container {
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .evolution-header {
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .evolution-header h2 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
+  
+  .highlight {
+    font-weight: bold;
+  }
+  
+  .evolution-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .evolution-categories {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .category-item {
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 2px solid transparent;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .category-item.selected {
+    border-left: 2px solid white;
+    color: white;
+  }
+  
+  .category-description {
+    display: none;
+  }
+  
+  .evolution-video {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .video-player {
+    width: 100%;
+    height: auto;
+  }
+  
+  .evolution-parts {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+  }
+  
+  .parts-selection {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .part-item {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: gray;
+  }
+  
+  .part-item.selected {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .play-pause-btn {
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .play-pause-btn:hover {
+    background-color: #e5e5e5;
+  }
+  

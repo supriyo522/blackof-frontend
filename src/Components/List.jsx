@@ -1,13 +1,15 @@
 import React from "react";
+import './List.css'; // Import the external CSS file
+
 const List = ({ data }) => {
   return (
     <>
       {data.map((link) => (
-        <div key={link.id}>
-          <h3 className="font-bold text-black">{link.category}</h3>
-          <ul className="mt-5 space-y-5">
+        <div key={link.id} className="list-category">
+          <h3 className="category-title">{link.category}</h3>
+          <ul className="link-list">
             {link.links.map((item) => (
-              <li className="hover:text-gray-800 cursor-pointer text-gray-500" key={item.id}>
+              <li className="link-item" key={item.id}>
                 {item.name}
               </li>
             ))}

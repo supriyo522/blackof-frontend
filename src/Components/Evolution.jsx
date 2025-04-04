@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { PlayArrow, Pause } from "@mui/icons-material";
+import './Evolution.css'; // Importing the external CSS
 
 const Evolution = () => {
   const [selectedCategory, setSelectedCategory] = useState("Passenger vehicles");
@@ -48,52 +49,46 @@ const Evolution = () => {
   };
 
   return (
-    <div className="w-full pb-12 bg-black text-white font-primary flex flex-col items-center justify-center p-2">
+    <div className="evolution-container">
       {/* Heading */}
-      <div className="w-full max-sm:p-2">
-        <h2 className="text-4xl mb-4 py-2 mt-24 text-center leading-12">
-          Evolving the drive with <span className="font-bold">360-degree</span>
+      <div className="evolution-header">
+        <h2>
+          Evolving the drive with <span className="highlight">360-degree</span>
           <br /> comprehensive solutions
         </h2>
       </div>
 
       {/* Main section */}
-      <div className="w-full flex justify-center items-center max-sm:flex-col-reverse max-md:flex-col-reverse">
+      <div className="evolution-main">
         {/* Left Section - Vehicle Categories */}
-        <div className="lg:w-1/3 w-full p-6 max-sm:flex max-md:w-full max-md:flex">
+        <div className="evolution-categories">
           {vehicleCategories.map((category) => (
             <div
               key={category.id}
-              className={`cursor-pointer my-4 p-2 lg:px-12 lg:py-12 lg:border-l-2 transition-all max-md:w-1/2 text-center ${
-                selectedCategory === category.name ? "border-white text-white" : "border-gray-700 text-gray-500"
-              }`}
+              className={`category-item ${selectedCategory === category.name ? 'selected' : ''}`}
               onClick={() => setSelectedCategory(category.name)}
             >
-              <h3 className="text-xl font-semibold">{category.name}</h3>
-              <p className="text-sm max-sm:hidden max-md:hidden">{category.description}</p>
+              <h3>{category.name}</h3>
+              <p className="category-description">{category.description}</p>
             </div>
           ))}
         </div>
 
         {/* Right Section - Video Player */}
-        <div className="lg:w-2/3 w-full flex items-center justify-center relative">
-          <div className="w-full h-full py-32 px-22 text-center justify-center items-center">
-            <video ref={videoRef} src={videoSources[selectedCategory][selectedPart]} className="w-full h-auto" autoPlay muted loop />
-          </div>
+        <div className="evolution-video">
+          <video ref={videoRef} src={videoSources[selectedCategory][selectedPart]} className="video-player" autoPlay muted loop />
         </div>
       </div>
 
       {/* Bottom Section - Vehicle Parts Selection */}
-      <div className="w-full mr-12 flex justify-end items-center">
-        <div className="flex gap-6 mt-4 lg:mt-0 overflow-y-auto no-scrollbar max-sm:mx-6 max-md:px-6">
+      <div className="evolution-parts">
+        <div className="parts-selection">
           {vehicleParts.map((part) =>
             selectedCategory === part.name
               ? part.categories.map((item) => (
                   <p
                     key={item}
-                    className={`mr-12 px-4 py-2 hover:cursor-pointer ${
-                      selectedPart === item ? "text-white font-semibold" : "text-gray-500"
-                    }`}
+                    className={`part-item ${selectedPart === item ? 'selected' : ''}`}
                     onClick={() => setSelectedPart(item)}
                   >
                     {item}
@@ -104,7 +99,7 @@ const Evolution = () => {
         </div>
 
         {/* Play/Pause Button */}
-        <button className="relative bottom-10 bg-white text-black p-3 rounded-full shadow-lg max-sm:hidden max-md:hidden" onClick={togglePlayPause}>
+        <button className="play-pause-btn" onClick={togglePlayPause}>
           {isPlaying ? <Pause sx={{ width: 24, height: 24 }} /> : <PlayArrow sx={{ width: 24, height: 24 }} />}
         </button>
       </div>

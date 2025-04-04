@@ -1,0 +1,23 @@
+/* Base button container styles */
+.button-container {
+    max-width: fit-content;
+    padding: 8px 24px;
+    cursor: pointer;
+    border-radius: 9999px; /* Rounded full */
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Font style */
+  .button-text {
+    font-family: 'YourFontFamily', sans-serif; /* Replace with the actual font name */
+  }
+  
+  /* Hover effect */
+  .button-container:hover {
+    background-color: #f3f4f6; /* Light gray background on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+  }
+  
+  /* Optionally: Add additional class for border, background, or other customizations */
+  

@@ -1,0 +1,53 @@
+/* Container for the full screen layout */
+.not-found-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'YourFontFamily', sans-serif; /* Replace with the actual font */
+    background-color: #f5f5f5; /* Light background for the entire screen */
+    overflow: hidden;
+  }
+  
+  /* Flexbox setup for the content */
+  .not-found-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    space-y: 1rem;
+  }
+  
+  /* Styling for the 404 text */
+  .not-found-title {
+    font-size: 9rem;
+    color: #ff6347; /* Use your secondary color or replace this */
+  }
+  
+  /* Styling for the message */
+  .not-found-message {
+    font-size: 1rem;
+    color: #333; /* Text color for the message */
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the button */
+  .not-found-button {
+    background-color: #007bff; /* Primary button background color */
+    border: 2px solid #ff6347; /* Border color */
+    font-weight: 600; /* Make the button text bold */
+    color: white; /* Button text color */
+    padding: 10px 24px;
+    border-radius: 50px; /* Round the button edges */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  /* Button hover effect */
+  .not-found-button:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+    transform: scale(1.05); /* Slight scale-up effect */
+  }
+  
